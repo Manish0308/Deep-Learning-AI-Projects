@@ -1,0 +1,12 @@
+<configuration>
+    <input>
+        <net-file value="../xml_files/network_with_30_tls.net.xml"/>
+        <route-files value="../routes/runtime_routes.xml,aco_final_edge_route.xml"/>
+        <additional-files value="../xml_files/edge_sensors.add.xml,../vtypes.add.xml,../xml_files/realworld_traffic_lights.tll.xml"/>
+    </input>
+
+    <time>
+        <begin value="0"/>
+        <end value="14400"/>
+    </time>
+</configuration>

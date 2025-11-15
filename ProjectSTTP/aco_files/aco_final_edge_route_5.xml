@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+  <vehicle id="vehicle_10001" type="slow_vehicle" depart="1000.00">
+    <route edges="-93 -14 -3 7 25 86 119"/>
+  </vehicle>
+  <vehicle id="vehicle_10002" type="slow_vehicle" depart="2000.00">
+    <route edges="-73 -47 -21 -7 3 14 93"/>
+  </vehicle>
+  <vehicle id="vehicle_10003" type="slow_vehicle" depart="2000.00">
+    <route edges="-121 -86 78 -71 73"/>
+  </vehicle>
+  <vehicle id="vehicle_10004" type="slow_vehicle" depart="2000.00">
+    <route edges="-73 -47 -21 -7 3 14"/>
+  </vehicle>
+  <vehicle id="vehicle_10005" type="slow_vehicle" depart="2000.00">
+    <route edges="-138 -107 -19 -7 5 17 41"/>
+  </vehicle>
+  <vehicle id="vehicle_10006" type="slow_vehicle" depart="2000.00">
+    <route edges="-71 -47 -21 -7 3 14 93 126 -132"/>
+  </vehicle>
+  <vehicle id="vehicle_10007" type="slow_vehicle" depart="2000.00">
+    <route edges="-138 -107 -19 -7 5 17 41"/>
+  </vehicle>
+  <vehicle id="vehicle_10008" type="slow_vehicle" depart="2000.00">
+    <route edges="-47 -21 -7 5 15 -12 14 93"/>
+  </vehicle>
+  <vehicle id="vehicle_10009" type="slow_vehicle" depart="2000.00">
+    <route edges="107 138 -121 -86 -25 -7 3 14 93 126 -132"/>
+  </vehicle>
+  <vehicle id="vehicle_100010" type="slow_vehicle" depart="2000.00">
+    <route edges="93 126 -132 131 -57 -9 7 25 86 121 -138 -107"/>
+  </vehicle>
+  <vehicle id="vehicle_100011" type="slow_vehicle" depart="2000.00">
+    <route edges="-99 -14 -3 7 25 86 119"/>
+  </vehicle>
+  <vehicle id="vehicle_100012" type="slow_vehicle" depart="2000.00">
+    <route edges="107 138 -121 -86 -25 -7 5 -10 14"/>
+  </vehicle>
+  <vehicle id="vehicle_100013" type="slow_vehicle" depart="2000.00">
+    <route edges="-99 -14 -3 7 25 86 119"/>
+  </vehicle>
+  <vehicle id="vehicle_100014" type="slow_vehicle" depart="2000.00">
+    <route edges="-138 -107 -19 -7 3 14"/>
+  </vehicle>
+  <vehicle id="vehicle_100015" type="slow_vehicle" depart="2000.00">
+    <route edges="107 138 -121 -86 -25 -7 3 14 93 126 -132"/>
+  </vehicle>
+  <vehicle id="vehicle_100016" type="slow_vehicle" depart="2000.00">
+    <route edges="-99 -14 -3 7 25 86 121 -138 -107"/>
+  </vehicle>
+  <vehicle id="vehicle_100017" type="slow_vehicle" depart="2000.00">
+    <route edges="-73 -47 -21 -7 3 14"/>
+  </vehicle>
+  <vehicle id="vehicle_100018" type="slow_vehicle" depart="2000.00">
+    <route edges="-19 -7 5 15 -12 14 93 126 -132"/>
+  </vehicle>
+  <vehicle id="vehicle_100019" type="slow_vehicle" depart="2000.00">
+    <route edges="-47 -21 -7 9 57 -91 93"/>
+  </vehicle>
+  <vehicle id="vehicle_100020" type="slow_vehicle" depart="2000.00">
+    <route edges="132 -126 -93 -14 -3 9 55"/>
+  </vehicle>
+</routes>

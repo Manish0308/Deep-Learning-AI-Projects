@@ -1,0 +1,3 @@
+<vTypes>
+  <vType id="slow_vehicle" accel="1.0" decel="9.0" sigma="0.5" length="5.0" minGap="2.5" maxSpeed="1.38889" />
+</vTypes>

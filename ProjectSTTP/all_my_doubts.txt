@@ -1,0 +1,72 @@
+xcellent follow-up — let’s compare SEQ_SIZE = 4 vs SEQ_SIZE = 6 in the context of your small dataset (49 timestamps total) to decide what’s best.
+
+🔍 What SEQ_SIZE Means
+SEQ_SIZE = N means: use N past time steps to predict the next (1 step ahead).
+
+So with SEQ_SIZE = 4, your model learns patterns based on the last 4 time steps (20 minutes) to predict the next one (5 minutes later).
+
+With SEQ_SIZE = 6, it looks back 30 minutes.
+
+📊 Trade-Offs: SEQ_SIZE = 4 vs SEQ_SIZE = 6
+Factor	SEQ_SIZE = 4	SEQ_SIZE = 6
+Training Sequences	49 - 4 = 45	49 - 6 = 43
+Temporal Context	20 minutes	30 minutes (better)
+Model Learning Depth	Slightly less info	Slightly more temporal depth
+Overfitting Risk	Lower (less data per input)	Slightly higher, but minor
+Generalization	Possibly less context	Better for capturing patterns
+
+✅ Recommendation
+If you want very fast training, fewer parameters, and don’t need long-term dependency: go with SEQ_SIZE = 4.
+
+If you want the model to learn slightly richer temporal dependencies and can afford 2 fewer samples: go with SEQ_SIZE = 6.
+
+
+
+
+
+
+
+Why inputnumT = 12 * inputnum was used:
+In the original ST-CGCN code (like for PEMS03), the authors aimed to capture both short-term and long-term temporal dependencies in traffic flow. Here's what the components mean:
+
+inputnum: number of short-term sequence steps. For example, if your data is sampled every 5 minutes and inputnum = 8, that covers the past 40 minutes.
+
+12 * inputnum: long-term span, where 12 refers to a fixed time gap (12 × 5 minutes = 1 hour). This means they’re taking samples from:
+
+t - 12*8, t - 12*7, ..., t - 12*1
+
+This skips ahead in time, grabbing data at the same time of day in previous periods, which is assumed to model daily or periodic traffic patterns.
+
+Your Case:
+You have:
+
+49 timestamps
+
+Each timestamp is 5 minutes apart (i.e., total duration: 49 × 5 = 245 minutes ≈ 4 hours)
+
+That’s a very short time span compared to real-world datasets like PEMS03 (which might span weeks/months).
+
+Can we reduce 12?
+Yes, absolutely. You should reduce the inputnumT multiplier to avoid indexing outside the available 49 samples.
+
+Recommendation:
+Set inputnumT = 4 * inputnum or even 2 * inputnum.
+
+For example, if:
+
+inputnum = 8
+
+then inputnumT = 4 * 8 = 32
+
+Then the long-term sequence looks back from:
+
+t - 32, t - 28, ..., t - 4
+
+That gives you 8 samples with moderate temporal gaps.
+
+Summary:
+12 was used to simulate long-range periodic traffic behavior in larger datasets.
+
+In your small dataset with only 49 steps, using 12 is too much — it would restrict training windows too much or cause out-of-bound errors.
+
+✅ Safe value: inputnumT = 4 * inputnum or adjust based on validation.
